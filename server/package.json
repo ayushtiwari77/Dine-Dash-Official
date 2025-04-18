@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.ts",
     "stripe": "stripe listen --forward-to localhost:8000/api/v1/order/webhook",
-    "build": "tsc",
+    "build": "npm install && tsc",
     "start": "node dist/index.js"
   },
   "keywords": [],
