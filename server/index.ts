@@ -27,6 +27,8 @@ app.use(cookieParser());
 const corsOptions = {
   origin: "https://dinedashofficial.netlify.app",
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "Set-Cookie"],
 };
 app.use(cors(corsOptions));
 
