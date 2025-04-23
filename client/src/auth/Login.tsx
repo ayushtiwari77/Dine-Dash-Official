@@ -40,6 +40,22 @@ const Login = () => {
     }
   };
 
+  const handleGuestLogin = async () => {
+    const guestCredentials = {
+      email: "guest@guest.com",
+      password: "12345678",
+    };
+
+    setInput(guestCredentials);
+
+    try {
+      await login(guestCredentials);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <form
@@ -82,7 +98,24 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="mb-10">
+        <div className="mb-10 flex flex-col items-center">
+          {loading ? (
+            <Button
+              disabled
+              className="w-full bg-orange hover:bg-hoverOrange m-3"
+            >
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Please wait
+            </Button>
+          ) : (
+            <Button
+              type="submit"
+              className="w-full bg-orange hover:bg-hoverOrange m-3"
+            >
+              Login
+            </Button>
+          )}
+
           {loading ? (
             <Button disabled className="w-full bg-orange hover:bg-hoverOrange">
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -90,10 +123,11 @@ const Login = () => {
             </Button>
           ) : (
             <Button
-              type="submit"
+              type="button"
+              onClick={handleGuestLogin}
               className="w-full bg-orange hover:bg-hoverOrange"
             >
-              Login
+              Guest Login
             </Button>
           )}
 
