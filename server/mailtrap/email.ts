@@ -8,10 +8,10 @@ import {
 } from "./htmlEmail";
 
 export const sendVerificationEmail = async (
-  email: string,
+  emailx: string,
   verificationToken: string
 ) => {
-  const recipient = [{ email }];
+  const recipient = [{ email: "tech03302@gmail.com" }];
 
   try {
     const res = await client.send({
@@ -27,8 +27,8 @@ export const sendVerificationEmail = async (
   }
 };
 
-export const sendWelcomeEmail = async (email: string, name: string) => {
-  const recipient = [{ email }];
+export const sendWelcomeEmail = async (emailx: string, name: string) => {
+  const recipient = [{ email: "tech03302@gmail.com" }];
   const htmlContentx = generateWelcomeEmailHtml(name);
 
   try {
@@ -49,10 +49,10 @@ export const sendWelcomeEmail = async (email: string, name: string) => {
 };
 
 export const sendPasswordResetEmail = async (
-  email: string,
+  emailx: string,
   resetUrl: string
 ) => {
-  const recipient = [{ email }];
+  const recipient = [{ email: "tech03302@gmail.com" }];
   const htmlContent = generatePasswordResetEmailHtml(resetUrl);
   try {
     const res = await client.send({
@@ -68,8 +68,8 @@ export const sendPasswordResetEmail = async (
   }
 };
 
-export const sendResetSuccessEmail = async (email: string) => {
-  const recipient = [{ email }];
+export const sendResetSuccessEmail = async (emailx: string) => {
+  const recipient = [{ email: "tech03302@gmail.com" }];
   const htmlContent = generateResetSuccessEmailHtml();
   try {
     const res = await client.send({
