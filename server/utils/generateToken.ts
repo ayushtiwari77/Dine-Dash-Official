@@ -13,9 +13,10 @@ export const generateToken = (res: Response, user: IUserDocument) => {
   });
   res.cookie("token", token, {
     httpOnly: true,
+    secure: true,
     sameSite: "none",
     maxAge: 24 * 60 * 60 * 1000,
-    secure: true,
+    path: "/",
   });
 
   return token;
