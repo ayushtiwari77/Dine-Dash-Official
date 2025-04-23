@@ -1,5 +1,14 @@
-[[redirects]]
 
-from = "/*"
-to = "/index.html"
-status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://dine-dash-official.onrender.com"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization, Set-Cookie"
+    Access-Control-Allow-Credentials = "true"
