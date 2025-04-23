@@ -137,7 +137,10 @@ const CheckoutConfirmPage = ({
                 Please wait
               </Button>
             ) : (
-              <Button className="bg-orange hover:bg-hoverOrange">
+              <Button
+                onClick={() => setOpen(false)}
+                className="bg-orange hover:bg-hoverOrange"
+              >
                 Continue To Payment
               </Button>
             )}

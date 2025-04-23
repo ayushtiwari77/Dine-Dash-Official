@@ -26,7 +26,7 @@ const HeroSection = () => {
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search restaurant by name, city & country"
+            placeholder="type india or america"
             className="pl-10 shadow-lg"
           />
           <Search className="text-gray-500 absolute inset-y-2 left-2" />
