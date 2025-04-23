@@ -17,6 +17,7 @@ export const generateToken = (res: Response, user: IUserDocument) => {
     sameSite: "none",
     maxAge: 24 * 60 * 60 * 1000,
     path: "/",
+    partitioned: true, // Add this line
   });
 
   return token;
